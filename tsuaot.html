@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>תוצאות ספורט חיות — כדורגל ו-F1 | WorldStadium</title>
+  <meta name="description" content="תוצאות ספורט חיות לישראלים — Premier League, La Liga, Champions League, פורמולה 1. לוח משחקים, תוצאות, וכרטיסים לאירועים הבאים.">
+  <link rel="canonical" href="https://worldstadium.co.il/tsuaot.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{--primary:#0C1B2E;--primary-mid:#163352;--primary-light:#2A4E7C;--accent:#F5C518;--accent-dark:#D4A800;--live:#E10600;--live-bg:#FFF8F8;--bg:#F4F7FC;--bg2:#E8EEF6;--white:#FFFFFF;--text:#0C1B2E;--text2:#4A5A72;--text3:#8A9BB0;--border:rgba(12,27,46,0.1);--shadow:0 4px 24px rgba(12,27,46,0.09);--shadow-lg:0 8px 40px rgba(12,27,46,0.14);--radius:16px;--radius-sm:8px;--nav-h:68px;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Heebo',Arial,sans-serif;background:var(--bg);color:var(--text);direction:rtl;font-size:16px;line-height:1.7;overflow-x:hidden;}
+    a{color:inherit;text-decoration:none;}
+    .container{max-width:1200px;margin:0 auto;padding:0 24px;}
+
+    /* NAV */
+    nav{position:sticky;top:0;z-index:100;height:var(--nav-h);background:var(--primary);box-shadow:0 2px 16px rgba(0,0,0,0.3);}
+    .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:100%;display:flex;align-items:center;justify-content:space-between;}
+    .nav-logo{font-size:1.5rem;font-weight:900;color:#fff;}.nav-logo span{color:var(--accent);}
+    .nav-links{display:flex;gap:4px;list-style:none;align-items:center;}
+    .nav-links a{color:rgba(255,255,255,0.8);font-weight:500;font-size:0.95rem;padding:8px 14px;border-radius:var(--radius-sm);transition:all 0.2s;}
+    .nav-links a:hover,.nav-links a.active{color:#fff;background:rgba(255,255,255,0.1);}
+    .btn-nav{background:var(--accent)!important;color:var(--primary)!important;font-weight:800!important;padding:10px 22px!important;border-radius:50px!important;}
+    .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;}
+    .nav-hamburger span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;}
+
+    /* PAGE HEADER */
+    .page-header{background:linear-gradient(135deg,var(--primary) 0%,#1A0A0A 60%,#3D0000 100%);padding:36px 0 32px;}
+    .page-header h1{font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:900;color:#fff;margin-bottom:6px;}
+    .page-header p{color:rgba(255,255,255,0.6);font-size:0.9rem;}
+    .live-dot{display:inline-block;width:9px;height:9px;background:var(--live);border-radius:50%;margin-left:8px;vertical-align:middle;animation:pulse 1.5s infinite;}
+    @keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(0.7);}}
+
+    /* TABS */
+    .tabs-wrap{background:var(--white);border-bottom:2px solid var(--border);position:sticky;top:var(--nav-h);z-index:50;}
+    .tabs-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;gap:0;align-items:center;justify-content:space-between;}
+    .tabs-left{display:flex;gap:0;}
+    .tab-btn{padding:16px 22px;font-size:1rem;font-weight:700;color:var(--text2);border:none;background:none;cursor:pointer;border-bottom:3px solid transparent;transition:all 0.2s;margin-bottom:-2px;font-family:inherit;}
+    .tab-btn:hover{color:var(--primary);}
+    .tab-btn.active{color:var(--primary);border-bottom-color:var(--accent);}
+    .update-info{font-size:0.78rem;color:var(--text3);padding:0 8px;}
+
+    /* CONTENT */
+    .tab-content{padding:36px 0 64px;}
+    .tab-pane{display:none;}.tab-pane.active{display:block;}
+
+    /* COMPETITION FILTER */
+    .comp-filter{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px;}
+    .filter-btn{padding:6px 16px;border-radius:50px;border:1.5px solid var(--border);background:var(--white);font-size:0.83rem;font-weight:600;color:var(--text2);cursor:pointer;transition:all 0.2s;font-family:inherit;white-space:nowrap;}
+    .filter-btn:hover{border-color:var(--primary-light);color:var(--primary);}
+    .filter-btn.active{background:var(--primary);color:#fff;border-color:var(--primary);}
+
+    /* SECTION */
+    .section-block{margin-bottom:32px;}
+    .section-title{font-size:0.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text3);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border);}
+
+    /* MATCH CARD */
+    .match-card{background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:14px 18px;margin-bottom:8px;display:grid;grid-template-columns:90px 1fr auto;gap:12px;align-items:center;transition:all 0.2s;}
+    .match-card:hover{box-shadow:var(--shadow);}
+    .match-card.live{border-color:var(--live);border-right-width:4px;background:var(--live-bg);}
+
+    .comp-badge{font-size:0.71rem;font-weight:700;padding:3px 10px;border-radius:50px;white-space:nowrap;text-align:center;}
+    .comp-PL{background:#F0E8FF;color:#5B21B6;}
+    .comp-PD{background:#FEE2E2;color:#991B1B;}
+    .comp-CL{background:#DBEAFE;color:#1E40AF;}
+    .comp-BL1{background:#FEE2E2;color:#991B1B;}
+    .comp-SA{background:#E0F2FE;color:#0369A1;}
+    .comp-FL1{background:#EDE9FE;color:#4C1D95;}
+    .comp-EL{background:#FEF3C7;color:#92400E;}
+    .comp-WC{background:#D1FAE5;color:#065F46;}
+
+    .match-teams{min-width:0;}
+    .team-row{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:2px 0;}
+    .team-name{font-size:0.9rem;font-weight:700;color:var(--primary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+    .team-score{font-size:1rem;font-weight:900;color:var(--primary);min-width:18px;text-align:center;flex-shrink:0;}
+    .team-name.winner{color:var(--live);}
+
+    .match-right{text-align:center;min-width:70px;}
+    .status-badge{display:inline-block;font-size:0.72rem;font-weight:800;padding:4px 10px;border-radius:50px;white-space:nowrap;}
+    .s-live{background:var(--live);color:#fff;}
+    .s-ht{background:#7C3AED;color:#fff;}
+    .s-fin{background:#F1F5F9;color:var(--text2);}
+    .s-sched{background:var(--bg2);color:var(--primary-light);}
+
+    .match-cta{grid-column:1/-1;padding-top:10px;border-top:1px solid var(--border);display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+    .ticket-label{font-size:0.76rem;color:var(--text3);}
+    .btn-ticket{display:inline-block;background:var(--accent);color:var(--primary);font-size:0.75rem;font-weight:800;padding:4px 14px;border-radius:50px;transition:all 0.2s;white-space:nowrap;}
+    .btn-ticket:hover{background:var(--accent-dark);}
+
+    /* SETUP CARD */
+    .setup-card{background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius);padding:40px;max-width:580px;margin:0 auto;text-align:center;}
+    .setup-card h2{font-size:1.25rem;font-weight:900;color:var(--primary);margin-bottom:10px;}
+    .setup-card > p{color:var(--text2);font-size:0.92rem;margin-bottom:28px;}
+    .setup-steps{text-align:right;margin-bottom:24px;display:flex;flex-direction:column;gap:12px;}
+    .setup-step{display:flex;gap:12px;align-items:flex-start;}
+    .step-n{width:24px;height:24px;background:var(--primary);color:#fff;border-radius:50%;font-size:0.78rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+    .setup-step p{font-size:0.88rem;color:var(--text2);margin:0;}
+    .setup-step a{color:var(--primary-light);text-decoration:underline;}
+    .key-input-row{display:flex;gap:8px;margin-top:4px;}
+    .key-input{flex:1;padding:11px 14px;border:1.5px solid var(--border);border-radius:var(--radius-sm);font-size:0.9rem;font-family:monospace;outline:none;direction:ltr;text-align:left;}
+    .key-input:focus{border-color:var(--primary-light);}
+    .btn-save{background:var(--primary);color:#fff;border:none;padding:11px 22px;border-radius:var(--radius-sm);font-size:0.9rem;font-weight:700;cursor:pointer;font-family:inherit;transition:background 0.2s;}
+    .btn-save:hover{background:var(--primary-mid);}
+    .key-note{font-size:0.78rem;color:var(--text3);margin-top:8px;}
+    .key-err{font-size:0.82rem;color:var(--live);margin-top:6px;display:none;}
+
+    /* LOADING / ERROR */
+    .loading{text-align:center;padding:56px 20px;color:var(--text3);}
+    .spinner{width:34px;height:34px;border:3px solid var(--border);border-top-color:var(--primary);border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 14px;}
+    @keyframes spin{to{transform:rotate(360deg);}}
+    .error-box{background:#FFF5F5;border:1.5px solid #FCA5A5;border-radius:var(--radius-sm);padding:16px 20px;color:#B91C1C;font-size:0.88rem;margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+    .empty-state{text-align:center;padding:40px 20px;color:var(--text3);}
+    .empty-state .ico{font-size:2.5rem;margin-bottom:10px;}
+
+    /* CHANGE KEY */
+    .key-bar{display:flex;align-items:center;gap:8px;margin-bottom:16px;font-size:0.8rem;color:var(--text3);}
+    .btn-change-key{background:none;border:none;color:var(--primary-light);font-size:0.8rem;cursor:pointer;text-decoration:underline;font-family:inherit;padding:0;}
+
+    /* F1 STYLES */
+    .next-race-card{background:linear-gradient(135deg,#1A0000,#3D0000);border-radius:var(--radius);padding:28px 32px;margin-bottom:28px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;}
+    .nrc-label{font-size:0.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:6px;}
+    .nrc-name{font-size:1.5rem;font-weight:900;color:#fff;margin-bottom:4px;}
+    .nrc-detail{font-size:0.88rem;color:rgba(255,255,255,0.55);}
+    .nrc-date{font-size:0.92rem;color:rgba(255,255,255,0.7);margin-top:6px;font-weight:600;}
+    .btn-ticket-f1{display:inline-block;background:var(--accent);color:var(--primary);font-size:0.88rem;font-weight:800;padding:10px 24px;border-radius:50px;margin-top:16px;transition:all 0.2s;}
+    .btn-ticket-f1:hover{background:var(--accent-dark);}
+    .countdown-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;flex-shrink:0;}
+    .cd-box{background:rgba(255,255,255,0.1);border-radius:var(--radius-sm);padding:10px;text-align:center;min-width:56px;}
+    .cd-num{font-size:1.5rem;font-weight:900;color:var(--accent);line-height:1;}
+    .cd-label{font-size:0.65rem;color:rgba(255,255,255,0.4);margin-top:4px;text-transform:uppercase;letter-spacing:1px;}
+
+    .f1-calendar{display:flex;flex-direction:column;gap:8px;}
+    .race-card{background:var(--white);border:1.5px solid var(--border);border-radius:var(--radius-sm);padding:14px 18px;display:grid;grid-template-columns:38px 1fr auto;gap:8px 14px;align-items:center;transition:all 0.2s;}
+    .race-card:hover{box-shadow:var(--shadow);}
+    .race-card.past{opacity:0.55;}
+    .race-card.next-r{border-color:var(--live);border-right-width:4px;background:var(--live-bg);}
+    .race-round{font-size:1rem;font-weight:900;color:var(--text3);text-align:center;}
+    .race-card.next-r .race-round{color:var(--live);}
+    .race-name{font-size:0.92rem;font-weight:800;color:var(--primary);}
+    .race-circuit{font-size:0.8rem;color:var(--text2);}
+    .race-right{text-align:center;}
+    .race-date{font-size:0.85rem;font-weight:700;color:var(--primary);}
+    .race-days{font-size:0.75rem;color:var(--text3);margin-top:2px;}
+    .race-card.next-r .race-days{color:var(--live);font-weight:700;}
+    .btn-ticket-race{display:inline-block;background:var(--accent);color:var(--primary);font-size:0.7rem;font-weight:800;padding:3px 12px;border-radius:50px;margin-top:5px;}
+
+    @media(max-width:768px){
+      .nav-links{display:none;}.nav-hamburger{display:flex;}
+      .match-card{grid-template-columns:70px 1fr;}
+      .match-right{grid-column:2;text-align:right;}
+      .next-race-card{grid-template-columns:1fr;}
+      .countdown-grid{grid-template-columns:repeat(4,1fr);}
+    }
+  </style>
+</head>
+<body>
+
+<nav><div class="nav-inner">
+  <a href="index.html" class="nav-logo">World<span>Stadium</span></a>
+  <ul class="nav-links">
+    <li><a href="football.html">⚽ כדורגל</a></li>
+    <li><a href="formula1.html">🏎️ פורמולה 1</a></li>
+    <li><a href="tennis.html">🎾 טניס</a></li>
+    <li><a href="tsuaot.html" class="active">🔴 תוצאות</a></li>
+    <li><a href="blog/index.html">📖 בלוג</a></li>
+    <li><a href="https://ticketingo.co.il/?a_aid=62937177466d8&ref=scream&currency=ILS&keyword=Sports+Events" target="_blank" rel="noopener" class="btn-nav">חפש כרטיסים</a></li>
+  </ul>
+  <div class="nav-hamburger"><span></span><span></span><span></span></div>
+</div></nav>
+
+<div class="page-header">
+  <div class="container">
+    <h1><span class="live-dot"></span> תוצאות ספורט חיות</h1>
+    <p id="lastUpdate">כדורגל אירופי · פורמולה 1 · לוח משחקים ואירועים קרובים</p>
+  </div>
+</div>
+
+<div class="tabs-wrap">
+  <div class="tabs-inner">
+    <div class="tabs-left">
+      <button class="tab-btn active" onclick="switchTab('football')">⚽ כדורגל</button>
+      <button class="tab-btn" onclick="switchTab('f1')">🏎️ פורמולה 1</button>
+    </div>
+    <span class="update-info" id="update-badge"></span>
+  </div>
+</div>
+
+<div class="tab-content">
+  <div class="container">
+
+    <!-- FOOTBALL TAB -->
+    <div id="tab-football" class="tab-pane active">
+      <div id="football-content"></div>
+    </div>
+
+    <!-- F1 TAB -->
+    <div id="tab-f1" class="tab-pane">
+      <div id="f1-container"></div>
+    </div>
+
+  </div>
+</div>
+
+<footer style="background:#080F1A;padding:32px 0 20px;color:rgba(255,255,255,0.6);">
+  <div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+    <a href="index.html" class="nav-logo" style="font-size:1.2rem;">World<span>Stadium</span></a>
+    <p style="font-size:0.78rem;color:rgba(255,255,255,0.35);max-width:500px;">האתר כולל קישורי שותפים. בעת רכישה דרך הקישורים שלנו אנו עשויים לקבל עמלה ללא עלות נוספת עבורך.</p>
+  </div>
+</footer>
+
+<script>
+// ─── CONFIG ────────────────────────────────────────────────────────
+const TICKET_BASE = 'https://ticketingo.co.il/?a_aid=62937177466d8&ref=scream&currency=ILS';
+const FD_BASE = 'https://api.football-data.org/v4';
+const COMPS = 'PL,PD,CL,BL1,SA,FL1,EL';
+
+// ─── TEAM DATA ──────────────────────────────────────────────────────
+const TEAM_HE = {
+  'Manchester City FC':'מנצ\'סטר סיטי','Manchester United FC':'מנצ\'סטר יונייטד',
+  'Arsenal FC':'ארסנל','Liverpool FC':'ליברפול','Chelsea FC':'צ\'לסי',
+  'Tottenham Hotspur FC':'טוטנהאם','Newcastle United FC':'ניוקאסל',
+  'Aston Villa FC':'אסטון וילה','West Ham United FC':'ווסט האם',
+  'Brighton & Hove Albion FC':'ברייטון','Brentford FC':'ברנטפורד',
+  'Fulham FC':'פולהאם','Wolverhampton Wanderers FC':'וולוורהמפטון',
+  'Crystal Palace FC':'קריסטל פאלאס','Everton FC':'אברטון',
+  'Nottingham Forest FC':'נוטינגהאם','Bournemouth AFC':'בורנמות',
+  'Leicester City FC':'לסטר','Southampton FC':'סאות\'המפטון',
+  'Real Madrid CF':'ריאל מדריד','FC Barcelona':'ברצלונה',
+  'Club Atletico de Madrid':'אטלטיקו מדריד','Sevilla FC':'סביליה',
+  'Valencia CF':'ולנסיה','Villarreal CF':'ויאריאל',
+  'Real Sociedad de Futbol':'ריאל סוסיאדד','Athletic Club':'אתלטיק בילבאו',
+  'Real Betis Balompie':'ריאל בטיס','Osasuna':'אוסאסונה',
+  'FC Bayern München':'ביירן מינכן','Borussia Dortmund':'בורוסיה דורטמונד',
+  'Bayer 04 Leverkusen':'לברקוזן','RB Leipzig':'לייפציג',
+  'Borussia Mönchengladbach':'מנכנגלדבאך','SC Freiburg':'פרייבורג',
+  'Eintracht Frankfurt':'איינטראכט פרנקפורט','VfB Stuttgart':'שטוטגרט',
+  'Juventus FC':'יובנטוס','AC Milan':'מילאן',
+  'FC Internazionale Milano':'אינטר מילאן','AS Roma':'רומא',
+  'SS Lazio':'לציו','SSC Napoli':'נאפולי','ACF Fiorentina':'פיורנטינה',
+  'Paris Saint-Germain FC':'פאריס סן-ז\'רמן',
+  'Olympique de Marseille':'מרסיי','Olympique Lyonnais':'ליון',
+  'AS Monaco FC':'מונאקו','LOSC Lille':'ליל',
+};
+
+const TEAM_KW = {
+  'Real Madrid CF':'Real+Madrid','FC Barcelona':'Barcelona',
+  'Manchester United FC':'Manchester+United','Liverpool FC':'Liverpool',
+  'Arsenal FC':'Arsenal','Chelsea FC':'Chelsea',
+  'Manchester City FC':'Manchester+City','Tottenham Hotspur FC':'Tottenham',
+  'FC Bayern München':'Bayern+Munich','Borussia Dortmund':'Borussia+Dortmund',
+  'Juventus FC':'Juventus','AC Milan':'AC+Milan',
+  'FC Internazionale Milano':'Inter+Milan',
+  'Paris Saint-Germain FC':'PSG','Club Atletico de Madrid':'Atletico+Madrid',
+  'Newcastle United FC':'Newcastle+United',
+};
+
+const COMP_INFO = {
+  'PL':{he:'פרמייר ליג',flag:'🏴󠁧󠁢󠁥󠁮󠁧󠁿',cls:'comp-PL',kw:'Premier+League'},
+  'PD':{he:'לה ליגה',flag:'🇪🇸',cls:'comp-PD',kw:'La+Liga'},
+  'CL':{he:'ליגת האלופות',flag:'🏆',cls:'comp-CL',kw:'Champions+League'},
+  'BL1':{he:'בונדסליגה',flag:'🇩🇪',cls:'comp-BL1',kw:'Bundesliga'},
+  'SA':{he:'סריה א',flag:'🇮🇹',cls:'comp-SA',kw:'Serie+A'},
+  'FL1':{he:'ליג 1',flag:'🇫🇷',cls:'comp-FL1',kw:'Ligue+1'},
+  'EL':{he:'ליגה אירופית',flag:'🟠',cls:'comp-EL',kw:'Europa+League'},
+  'WC':{he:'מונדיאל',flag:'🌍',cls:'comp-WC',kw:'World+Cup'},
+};
+
+// ─── F1 2026 CALENDAR ──────────────────────────────────────────────
+const F1_2026 = [
+  {r:1,he:'גרנד פרי אוסטרליה',circuit:'Albert Park',city:'Melbourne, AUS',date:'2026-03-15',kw:'Australian+Grand+Prix'},
+  {r:2,he:'גרנד פרי סין',circuit:'Shanghai International Circuit',city:'Shanghai, CHN',date:'2026-03-22',kw:'Chinese+Grand+Prix'},
+  {r:3,he:'גרנד פרי יפן',circuit:'Suzuka Circuit',city:'Suzuka, JPN',date:'2026-04-05',kw:'Japanese+Grand+Prix'},
+  {r:4,he:'גרנד פרי בחריין',circuit:'Bahrain International Circuit',city:'Sakhir, BHR',date:'2026-04-19',kw:'Bahrain+Grand+Prix'},
+  {r:5,he:'גרנד פרי ערב הסעודית',circuit:'Jeddah Corniche Circuit',city:'ג\'דה, KSA',date:'2026-04-26',kw:'Saudi+Arabian+Grand+Prix'},
+  {r:6,he:'גרנד פרי מיאמי',circuit:'Miami International Autodrome',city:'מיאמי, USA',date:'2026-05-10',kw:'Miami+Grand+Prix'},
+  {r:7,he:'גרנד פרי אמיליה רומניה',circuit:'Autodromo Enzo e Dino Ferrari',city:'אימולה, ITA',date:'2026-05-17',kw:'Imola+Grand+Prix'},
+  {r:8,he:'גרנד פרי מונקו',circuit:'Circuit de Monaco',city:'מונקו',date:'2026-05-24',kw:'Monaco+Grand+Prix'},
+  {r:9,he:'גרנד פרי ספרד',circuit:'Circuit de Barcelona-Catalunya',city:'ברצלונה, ESP',date:'2026-06-07',kw:'Spanish+Grand+Prix'},
+  {r:10,he:'גרנד פרי קנדה',circuit:'Circuit Gilles Villeneuve',city:'מונטריאול, CAN',date:'2026-06-14',kw:'Canadian+Grand+Prix'},
+  {r:11,he:'גרנד פרי אוסטריה',circuit:'Red Bull Ring',city:'שפילברג, AUT',date:'2026-06-28',kw:'Austrian+Grand+Prix'},
+  {r:12,he:'גרנד פרי בריטניה',circuit:'Silverstone Circuit',city:'סילברסטון, GBR',date:'2026-07-05',kw:'British+Grand+Prix'},
+  {r:13,he:'גרנד פרי בלגיה',circuit:'Circuit de Spa-Francorchamps',city:'ספא, BEL',date:'2026-07-26',kw:'Belgian+Grand+Prix'},
+  {r:14,he:'גרנד פרי הונגריה',circuit:'Hungaroring',city:'בודפשט, HUN',date:'2026-08-02',kw:'Hungarian+Grand+Prix'},
+  {r:15,he:'גרנד פרי הולנד',circuit:'Circuit Zandvoort',city:'זנדוורט, NED',date:'2026-08-30',kw:'Dutch+Grand+Prix'},
+  {r:16,he:'גרנד פרי איטליה',circuit:'Autodromo Nazionale di Monza',city:'מונצה, ITA',date:'2026-09-06',kw:'Italian+Grand+Prix'},
+  {r:17,he:'גרנד פרי אזרבייג\'ן',circuit:'Baku City Circuit',city:'באקו, AZE',date:'2026-09-20',kw:'Azerbaijan+Grand+Prix'},
+  {r:18,he:'גרנד פרי סינגפור',circuit:'Marina Bay Street Circuit',city:'סינגפור',date:'2026-10-04',kw:'Singapore+Grand+Prix'},
+  {r:19,he:'גרנד פרי ארה"ב',circuit:'Circuit of the Americas',city:'אוסטין, USA',date:'2026-10-18',kw:'United+States+Grand+Prix'},
+  {r:20,he:'גרנד פרי מקסיקו',circuit:'Autodromo Hermanos Rodriguez',city:'מקסיקו סיטי',date:'2026-10-25',kw:'Mexico+Grand+Prix'},
+  {r:21,he:'גרנד פרי ברזיל',circuit:'Autodromo Jose Carlos Pace',city:'סאו פאולו, BRA',date:'2026-11-08',kw:'Sao+Paulo+Grand+Prix'},
+  {r:22,he:'גרנד פרי לאס וגאס',circuit:'Las Vegas Strip Circuit',city:'לאס וגאס, USA',date:'2026-11-21',kw:'Las+Vegas+Grand+Prix'},
+  {r:23,he:'גרנד פרי אבו דאבי',circuit:'Yas Marina Circuit',city:'אבו דאבי, UAE',date:'2026-12-06',kw:'Abu+Dhabi+Grand+Prix'},
+];
+
+// ─── STATE ─────────────────────────────────────────────────────────
+let matchData = {today:[], tomorrow:[]};
+let currentFilter = 'all';
+let refreshTimer = null;
+let cdTimer = null;
+
+// ─── HELPERS ───────────────────────────────────────────────────────
+const getKey = () => localStorage.getItem('fd_key');
+const saveKey = k => localStorage.setItem('fd_key', k);
+
+function todayISO(offset=0){
+  const d = new Date(); d.setDate(d.getDate()+offset);
+  return d.toISOString().split('T')[0];
+}
+function timeIL(utcStr){
+  return new Date(utcStr).toLocaleTimeString('he-IL',{hour:'2-digit',minute:'2-digit',timeZone:'Asia/Jerusalem'});
+}
+function dateHe(utcStr){
+  return new Date(utcStr).toLocaleDateString('he-IL',{weekday:'short',day:'numeric',month:'short',timeZone:'Asia/Jerusalem'});
+}
+function dateLong(isoStr){
+  const [y,m,d] = isoStr.split('-').map(Number);
+  const months = ['ינואר','פברואר','מרץ','אפריל','מאי','יוני','יולי','אוגוסט','ספטמבר','אוקטובר','נובמבר','דצמבר'];
+  return `${d} ${months[m-1]} ${y}`;
+}
+
+// ─── TAB SWITCH ─────────────────────────────────────────────────────
+function switchTab(tab){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
+  event.target.classList.add('active');
+  document.getElementById('tab-'+tab).classList.add('active');
+  if(tab==='f1') renderF1();
+}
+
+// ─── FOOTBALL ──────────────────────────────────────────────────────
+function showSetup(err=''){
+  document.getElementById('football-content').innerHTML = `
+    <div class="setup-card">
+      <div style="font-size:2.5rem;margin-bottom:12px;">⚽</div>
+      <h2>חיבור נתוני כדורגל</h2>
+      <p>כדי לראות תוצאות ולוח משחקים, יש צורך במפתח API חינמי מ-football-data.org</p>
+      <div class="setup-steps">
+        <div class="setup-step"><div class="step-n">1</div><p>גש ל-<a href="https://www.football-data.org/client/register" target="_blank" rel="noopener">football-data.org</a> → נרשם בחינם</p></div>
+        <div class="setup-step"><div class="step-n">2</div><p>אחרי אישור מייל, תקבל מפתח API באיזור האישי שלך</p></div>
+        <div class="setup-step"><div class="step-n">3</div><p>הדבק את המפתח כאן — נשמר אצלך בלוקאל סטורג' בלבד</p></div>
+      </div>
+      ${err ? `<div style="color:var(--live);font-size:0.85rem;margin-bottom:12px;">${err}</div>` : ''}
+      <div class="key-input-row">
+        <input type="text" class="key-input" id="keyInput" placeholder="הדבק מפתח API כאן..." dir="ltr">
+        <button class="btn-save" onclick="handleSaveKey()">חבר</button>
+      </div>
+      <p class="key-note">חינמי לחלוטין · 10 בקשות/דקה · כולל Premier League, La Liga, UCL, Bundesliga ועוד</p>
+    </div>`;
+}
+
+function handleSaveKey(){
+  const val = document.getElementById('keyInput').value.trim();
+  if(!val){return;}
+  saveKey(val);
+  fetchFootball();
+}
+
+async function fetchFootball(){
+  const key = getKey();
+  if(!key){ showSetup(); return; }
+
+  document.getElementById('football-content').innerHTML = `<div class="loading"><div class="spinner"></div><p>טוען משחקים...</p></div>`;
+
+  try{
+    const [r1,r2] = await Promise.all([
+      fetch(`${FD_BASE}/matches?dateFrom=${todayISO()}&dateTo=${todayISO()}&competitions=${COMPS}`,{headers:{'X-Auth-Token':key}}),
+      fetch(`${FD_BASE}/matches?dateFrom=${todayISO(1)}&dateTo=${todayISO(1)}&competitions=${COMPS}`,{headers:{'X-Auth-Token':key}})
+    ]);
+
+    if(r1.status===403||r1.status===401){ showSetup('❌ מפתח שגוי — נסה שוב'); localStorage.removeItem('fd_key'); return; }
+    if(!r1.ok) throw new Error('HTTP '+r1.status);
+
+    const d1 = await r1.json();
+    const d2 = await r2.json();
+
+    matchData.today = d1.matches||[];
+    matchData.tomorrow = d2.matches||[];
+
+    renderMatches();
+
+    const now = new Date().toLocaleTimeString('he-IL',{hour:'2-digit',minute:'2-digit'});
+    document.getElementById('update-badge').textContent = 'עודכן '+now;
+
+    // Auto refresh
+    if(refreshTimer) clearTimeout(refreshTimer);
+    const hasLive = matchData.today.some(m=>['IN_PLAY','PAUSED'].includes(m.status));
+    refreshTimer = setTimeout(fetchFootball, hasLive ? 30000 : 300000);
+
+  }catch(e){
+    document.getElementById('football-content').innerHTML = `
+      <div class="error-box">⚠️ שגיאה בטעינת נתונים: ${e.message}</div>
+      <button onclick="fetchFootball()" style="background:var(--primary);color:#fff;border:none;padding:10px 20px;border-radius:8px;cursor:pointer;font-family:inherit;font-weight:700;">נסה שוב</button>`;
+  }
+}
+
+function renderMatches(){
+  const cont = document.getElementById('football-content');
+  const cf = currentFilter;
+
+  const fil = arr => cf==='all' ? arr : arr.filter(m=>m.competition.code===cf);
+
+  const live = fil(matchData.today.filter(m=>['IN_PLAY','PAUSED'].includes(m.status)));
+  const sched = fil(matchData.today.filter(m=>m.status==='SCHEDULED'));
+  const fin = fil(matchData.today.filter(m=>m.status==='FINISHED'));
+  const tom = fil(matchData.tomorrow);
+
+  // Build filter pills from available competitions
+  const allComps = [...new Set([...matchData.today,...matchData.tomorrow].map(m=>m.competition.code))];
+  const filterHtml = `
+    <div class="comp-filter">
+      <button class="filter-btn${cf==='all'?' active':''}" onclick="setFilter('all')">הכל</button>
+      ${allComps.map(c=>{
+        const ci=COMP_INFO[c];
+        if(!ci) return '';
+        return `<button class="filter-btn${cf===c?' active':''}" onclick="setFilter('${c}')">${ci.flag} ${ci.he}</button>`;
+      }).join('')}
+    </div>
+    ${getKey()?`<div class="key-bar"><span>מפתח מחובר ✓</span><button class="btn-change-key" onclick="localStorage.removeItem('fd_key');showSetup()">שנה מפתח</button></div>`:''}`;
+
+  let html = filterHtml;
+
+  if(live.length){
+    html += `<div class="section-block"><div class="section-title">🔴 חיות עכשיו</div>${live.map(matchCard).join('')}</div>`;
+  }
+  if(sched.length){
+    html += `<div class="section-block"><div class="section-title">📅 היום — קרובים</div>${sched.map(matchCard).join('')}</div>`;
+  }
+  if(fin.length){
+    html += `<div class="section-block"><div class="section-title">✅ היום — הסתיימו</div>${fin.map(matchCard).join('')}</div>`;
+  }
+  if(tom.length){
+    html += `<div class="section-block"><div class="section-title">📆 מחר — ${dateHe(matchData.tomorrow[0]?.utcDate)}</div>${tom.map(matchCard).join('')}</div>`;
+  }
+  if(!live.length && !sched.length && !fin.length && !tom.length){
+    html += `<div class="empty-state"><div class="ico">📭</div><p>אין משחקים${cf!=='all'?' ב'+(COMP_INFO[cf]?.he||cf):''}  היום ומחר</p></div>`;
+  }
+
+  cont.innerHTML = html;
+}
+
+function matchCard(m){
+  const comp = COMP_INFO[m.competition.code]||{he:m.competition.name,flag:'⚽',cls:'',kw:''};
+  const isLive = ['IN_PLAY','PAUSED'].includes(m.status);
+  const isHT = m.status==='PAUSED';
+  const isFin = m.status==='FINISHED';
+  const isSched = m.status==='SCHEDULED';
+
+  const hName = TEAM_HE[m.homeTeam.name]||m.homeTeam.shortName||m.homeTeam.name;
+  const aName = TEAM_HE[m.awayTeam.name]||m.awayTeam.shortName||m.awayTeam.name;
+  const hGoal = m.score?.fullTime?.home??'';
+  const aGoal = m.score?.fullTime?.away??'';
+  const hWin = m.score?.winner==='HOME_TEAM';
+  const aWin = m.score?.winner==='AWAY_TEAM';
+
+  let statusHtml;
+  if(isLive) statusHtml = `<span class="status-badge s-live">🔴 חי</span>`;
+  else if(isHT) statusHtml = `<span class="status-badge s-ht">⏸ הפסקה</span>`;
+  else if(isFin) statusHtml = `<span class="status-badge s-fin">${hGoal} — ${aGoal}</span>`;
+  else statusHtml = `<span class="status-badge s-sched">${timeIL(m.utcDate)}</span>`;
+
+  // Ticket CTA
+  const hKw = TEAM_KW[m.homeTeam.name];
+  const aKw = TEAM_KW[m.awayTeam.name];
+  let cta = '';
+  if(hKw||aKw){
+    cta = `<div class="match-cta"><span class="ticket-label">🎟️</span>`;
+    if(hKw) cta += `<a href="${TICKET_BASE}&keyword=${hKw}" target="_blank" rel="noopener" class="btn-ticket">${hName}</a>`;
+    if(aKw) cta += `<a href="${TICKET_BASE}&keyword=${aKw}" target="_blank" rel="noopener" class="btn-ticket">${aName}</a>`;
+    cta += `</div>`;
+  } else if(comp.kw){
+    cta = `<div class="match-cta"><span class="ticket-label">🎟️</span><a href="${TICKET_BASE}&keyword=${comp.kw}" target="_blank" rel="noopener" class="btn-ticket">${comp.he}</a></div>`;
+  }
+
+  return `
+    <div class="match-card${isLive?' live':''}">
+      <span class="comp-badge ${comp.cls}">${comp.flag} ${comp.he}</span>
+      <div class="match-teams">
+        <div class="team-row"><span class="team-name${hWin?' winner':''}">${hName}</span>${(isLive||isFin)?`<span class="team-score">${hGoal}</span>`:''}</div>
+        <div class="team-row"><span class="team-name${aWin?' winner':''}">${aName}</span>${(isLive||isFin)?`<span class="team-score">${aGoal}</span>`:''}</div>
+      </div>
+      <div class="match-right">${statusHtml}</div>
+      ${cta}
+    </div>`;
+}
+
+function setFilter(f){
+  currentFilter = f;
+  renderMatches();
+}
+
+// ─── F1 ────────────────────────────────────────────────────────────
+function renderF1(){
+  const today = new Date(); today.setHours(0,0,0,0);
+  let nextRace = null;
+  for(const r of F1_2026){
+    if(new Date(r.date)>=today){nextRace=r;break;}
+  }
+
+  let html = '';
+
+  // Next race countdown card
+  if(nextRace){
+    const rd = new Date(nextRace.date+'T14:00:00Z'); // Race usually ~14:00 UTC
+    html += `
+      <div class="next-race-card">
+        <div>
+          <div class="nrc-label">המירוץ הבא — סיבוב ${nextRace.r}</div>
+          <div class="nrc-name">${nextRace.he}</div>
+          <div class="nrc-detail">${nextRace.circuit}</div>
+          <div class="nrc-date">🗓️ ${dateLong(nextRace.date)}</div>
+          <a href="${TICKET_BASE}&keyword=${nextRace.kw}" target="_blank" rel="noopener" class="btn-ticket-f1">🎟️ חפש כרטיסים למירוץ</a>
+        </div>
+        <div class="countdown-grid" id="cd-grid">
+          <div class="cd-box"><div class="cd-num" id="cd-d">--</div><div class="cd-label">ימים</div></div>
+          <div class="cd-box"><div class="cd-num" id="cd-h">--</div><div class="cd-label">שעות</div></div>
+          <div class="cd-box"><div class="cd-num" id="cd-m">--</div><div class="cd-label">דקות</div></div>
+          <div class="cd-box"><div class="cd-num" id="cd-s">--</div><div class="cd-label">שניות</div></div>
+        </div>
+      </div>`;
+    startCountdown(rd);
+  }
+
+  // Calendar
+  const calRows = F1_2026.map(race=>{
+    const rd = new Date(race.date); rd.setHours(0,0,0,0);
+    const isPast = rd < today;
+    const isNext = race === nextRace;
+    const diffDays = Math.round((rd-today)/(1000*60*60*24));
+    const dateStr = rd.toLocaleDateString('he-IL',{day:'numeric',month:'short'});
+    let daysStr = isPast ? 'הסתיים' : diffDays===0 ? 'היום!' : `עוד ${diffDays} ימים`;
+
+    return `
+      <div class="race-card${isPast?' past':''}${isNext?' next-r':''}">
+        <div class="race-round">R${race.r}</div>
+        <div>
+          <div class="race-name">${race.he}</div>
+          <div class="race-circuit">${race.circuit} · ${race.city}</div>
+        </div>
+        <div class="race-right">
+          <div class="race-date">${dateStr}</div>
+          <div class="race-days">${daysStr}</div>
+          ${!isPast ? `<a href="${TICKET_BASE}&keyword=${race.kw}" target="_blank" rel="noopener" class="btn-ticket-race">🎟️ כרטיסים</a>` : ''}
+        </div>
+      </div>`;
+  }).join('');
+
+  html += `<div class="section-title" style="margin-top:4px;">לוח שנה מלא — עונת 2026</div><div class="f1-calendar">${calRows}</div>`;
+  document.getElementById('f1-container').innerHTML = html;
+}
+
+function startCountdown(target){
+  if(cdTimer) clearInterval(cdTimer);
+  function tick(){
+    const diff = target - new Date();
+    if(diff<=0){clearInterval(cdTimer);return;}
+    const d=Math.floor(diff/864e5),h=Math.floor((diff%864e5)/36e5),m=Math.floor((diff%36e5)/6e4),s=Math.floor((diff%6e4)/1e3);
+    const el = id => document.getElementById(id);
+    if(el('cd-d')){el('cd-d').textContent=d;el('cd-h').textContent=h;el('cd-m').textContent=m;el('cd-s').textContent=String(s).padStart(2,'0');}
+  }
+  tick();
+  cdTimer = setInterval(tick,1000);
+}
+
+// ─── INIT ──────────────────────────────────────────────────────────
+if(getKey()) fetchFootball();
+else showSetup();
+</script>
+</body>
+</html>

@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>מחשבון עלות נסיעה למונדיאל 2026 | WorldStadium</title>
+<meta name="description" content="חשב כמה תעלה לך הנסיעה למונדיאל 2026 — כרטיסים, טיסות ממישראל, מלון. מחשבון חינמי ומהיר.">
+<link rel="canonical" href="https://worldstadium.co.il/machshevon-mondial.html">
+<meta property="og:title" content="מחשבון עלות נסיעה למונדיאל 2026">
+<meta property="og:description" content="חשב כמה תעולה הנסיעה שלך למונדיאל — כרטיסים, טיסות, מלון. הכל בשקלים.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"מחשבון עלות נסיעה למונדיאל 2026","description":"כלי לחישוב עלות הנסיעה למונדיאל 2026 — כרטיסים, טיסות ומלון","url":"https://worldstadium.co.il/machshevon-mondial.html"}
+</script>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --primary:#0D1B3E;--primary-light:#1a3a7c;--accent:#F5C518;--accent-dark:#d4a900;
+    --text:#1a1a2e;--text2:#444;--text3:#888;--bg:#F8F9FB;--bg2:#EEF1F7;
+    --white:#fff;--border:#E0E4EF;--radius:16px;--radius-sm:10px;
+    --shadow:0 4px 20px rgba(13,27,62,.08);--shadow-lg:0 12px 40px rgba(13,27,62,.14);
+    --wc:#8B1A1A;
+  }
+  body{font-family:'Heebo',Arial,sans-serif;color:var(--text);background:var(--bg);}
+  a{text-decoration:none;color:inherit;}
+  nav{background:var(--primary);padding:0 24px;position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(0,0,0,.3);}
+  .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;}
+  .logo{font-size:1.35rem;font-weight:900;color:#fff;letter-spacing:-0.5px;}
+  .logo span{color:var(--accent);}
+  .nav-links{display:flex;align-items:center;gap:6px;list-style:none;}
+  .nav-links a{color:rgba(255,255,255,.82);font-size:0.9rem;font-weight:600;padding:8px 12px;border-radius:8px;transition:all .2s;}
+  .nav-links a:hover,.nav-links a.active{color:#fff;background:rgba(255,255,255,.1);}
+  .btn-nav{background:var(--accent)!important;color:var(--primary)!important;font-weight:800!important;padding:8px 18px!important;border-radius:50px!important;}
+  .btn-nav:hover{background:var(--accent-dark)!important;}
+
+  /* HERO */
+  .hero{background:linear-gradient(135deg,#6B0F0F 0%,#8B1A1A 40%,#1a3a7c 100%);padding:64px 24px 56px;text-align:center;color:#fff;position:relative;overflow:hidden;}
+  .hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
+  .hero-badge{display:inline-block;background:rgba(245,197,24,.15);border:1px solid rgba(245,197,24,.4);color:var(--accent);font-size:0.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 18px;border-radius:50px;margin-bottom:18px;}
+  .hero h1{font-size:clamp(1.8rem,5vw,3rem);font-weight:900;margin-bottom:14px;line-height:1.2;}
+  .hero p{font-size:1.05rem;color:rgba(255,255,255,.78);max-width:560px;margin:0 auto 10px;line-height:1.65;}
+  .hero-emoji{font-size:3.5rem;margin-bottom:10px;display:block;}
+
+  /* CALCULATOR */
+  .calc-section{padding:60px 24px;max-width:1000px;margin:0 auto;}
+  .calc-grid{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:start;}
+
+  /* FORM CARD */
+  .calc-form{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-lg);overflow:hidden;}
+  .calc-form-header{background:var(--primary);padding:20px 28px;}
+  .calc-form-header h2{color:#fff;font-size:1.1rem;font-weight:800;}
+  .calc-form-header p{color:rgba(255,255,255,.6);font-size:0.85rem;margin-top:4px;}
+  .calc-body{padding:28px;}
+
+  .form-group{margin-bottom:24px;}
+  .form-label{display:flex;align-items:center;gap:8px;font-size:0.88rem;font-weight:800;color:var(--primary);margin-bottom:10px;}
+  .form-label .step-num{width:22px;height:22px;background:var(--accent);color:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.72rem;font-weight:900;flex-shrink:0;}
+
+  select,input[type="number"]{width:100%;padding:12px 14px;border:1.5px solid var(--border);border-radius:var(--radius-sm);font-family:'Heebo',Arial,sans-serif;font-size:0.9rem;color:var(--text);background:var(--bg);transition:border-color .2s;appearance:none;-webkit-appearance:none;}
+  select:focus,input[type="number"]:focus{outline:none;border-color:var(--primary-light);}
+
+  .seg-btns{display:flex;gap:8px;flex-wrap:wrap;}
+  .seg-btn{flex:1;min-width:70px;padding:10px 8px;border:1.5px solid var(--border);border-radius:var(--radius-sm);background:var(--bg);font-family:'Heebo',Arial,sans-serif;font-size:0.82rem;font-weight:700;color:var(--text2);cursor:pointer;transition:all .2s;text-align:center;}
+  .seg-btn:hover{border-color:var(--primary-light);color:var(--primary);}
+  .seg-btn.active{background:var(--primary);border-color:var(--primary);color:#fff;}
+
+  .cat-btns{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+  .cat-btn{padding:12px 6px;border:1.5px solid var(--border);border-radius:var(--radius-sm);background:var(--bg);font-family:'Heebo',Arial,sans-serif;cursor:pointer;transition:all .2s;text-align:center;}
+  .cat-btn:hover{border-color:var(--primary-light);}
+  .cat-btn.active{background:var(--primary);border-color:var(--primary);color:#fff;}
+  .cat-btn .cat-num{display:block;font-size:1rem;font-weight:900;margin-bottom:3px;}
+  .cat-btn .cat-price{display:block;font-size:0.72rem;font-weight:600;opacity:.75;}
+
+  .num-row{display:flex;align-items:center;gap:12px;}
+  .num-btn{width:40px;height:40px;border:1.5px solid var(--border);border-radius:50%;background:var(--bg);font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--primary);transition:all .2s;flex-shrink:0;}
+  .num-btn:hover{background:var(--primary);border-color:var(--primary);color:#fff;}
+  .num-display{font-size:1.4rem;font-weight:900;color:var(--primary);min-width:32px;text-align:center;}
+
+  .hotel-btns{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+  .hotel-btn{padding:12px 8px;border:1.5px solid var(--border);border-radius:var(--radius-sm);background:var(--bg);font-family:'Heebo',Arial,sans-serif;cursor:pointer;transition:all .2s;text-align:center;}
+  .hotel-btn:hover{border-color:var(--primary-light);}
+  .hotel-btn.active{background:var(--primary);border-color:var(--primary);color:#fff;}
+  .hotel-btn .h-icon{display:block;font-size:1.4rem;margin-bottom:4px;}
+  .hotel-btn .h-name{display:block;font-size:0.8rem;font-weight:800;}
+  .hotel-btn .h-price{display:block;font-size:0.7rem;font-weight:600;opacity:.7;margin-top:2px;}
+
+  .nights-row{display:flex;align-items:center;gap:12px;margin-top:10px;}
+  .nights-label{font-size:0.85rem;color:var(--text2);}
+
+  /* RESULTS CARD */
+  .results-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow-lg);position:sticky;top:84px;}
+  .results-header{background:linear-gradient(135deg,#6B0F0F,#8B1A1A);border-radius:var(--radius) var(--radius) 0 0;padding:20px 24px;color:#fff;}
+  .results-header h3{font-size:1rem;font-weight:800;margin-bottom:4px;}
+  .results-header p{font-size:0.82rem;opacity:.7;}
+  .results-body{padding:20px 24px;}
+
+  .result-line{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid var(--border);}
+  .result-line:last-of-type{border-bottom:none;}
+  .rl-label{font-size:0.88rem;color:var(--text2);display:flex;align-items:center;gap:6px;}
+  .rl-val{font-size:0.95rem;font-weight:800;color:var(--primary);}
+  .rl-sub{font-size:0.75rem;color:var(--text3);display:block;margin-top:1px;}
+
+  .total-box{background:var(--primary);border-radius:var(--radius-sm);padding:18px;margin:16px 0;text-align:center;}
+  .total-label{color:rgba(255,255,255,.7);font-size:0.82rem;margin-bottom:6px;}
+  .total-amount{color:var(--accent);font-size:2rem;font-weight:900;line-height:1;}
+  .total-pp{color:rgba(255,255,255,.65);font-size:0.8rem;margin-top:6px;}
+
+  .btn-primary{display:block;width:100%;padding:14px;background:var(--accent);color:var(--primary);font-family:'Heebo',Arial,sans-serif;font-size:1rem;font-weight:800;border:none;border-radius:var(--radius-sm);cursor:pointer;text-align:center;transition:all .2s;}
+  .btn-primary:hover{background:var(--accent-dark);transform:translateY(-1px);}
+
+  .disclaimer{font-size:0.72rem;color:var(--text3);text-align:center;margin-top:10px;line-height:1.5;}
+
+  .exchange-row{display:flex;align-items:center;gap:8px;background:var(--bg2);border-radius:8px;padding:10px 14px;margin-top:16px;}
+  .exchange-row label{font-size:0.82rem;color:var(--text2);white-space:nowrap;}
+  .exchange-row input{flex:1;padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-family:'Heebo',Arial,sans-serif;font-size:0.88rem;font-weight:700;width:70px;}
+
+  /* TIPS */
+  .tips-section{padding:0 24px 60px;max-width:1000px;margin:0 auto;}
+  .tips-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .tip-card{background:var(--white);border-radius:var(--radius-sm);padding:20px;border:1.5px solid var(--border);}
+  .tip-icon{font-size:1.8rem;margin-bottom:10px;}
+  .tip-card h4{font-size:0.9rem;font-weight:800;color:var(--primary);margin-bottom:6px;}
+  .tip-card p{font-size:0.83rem;color:var(--text2);line-height:1.6;}
+
+  /* SECTION TITLE */
+  .section-title{text-align:center;margin-bottom:32px;}
+  .section-title h2{font-size:1.6rem;font-weight:900;color:var(--primary);}
+  .section-title p{color:var(--text2);font-size:0.9rem;margin-top:8px;}
+
+  /* FOOTER */
+  footer{background:var(--primary);color:rgba(255,255,255,.6);text-align:center;padding:32px 24px;font-size:0.85rem;}
+  footer a{color:rgba(255,255,255,.8);margin:0 8px;}
+
+  @media(max-width:768px){
+    .calc-grid{grid-template-columns:1fr;}
+    .results-card{position:static;}
+    .tips-grid{grid-template-columns:1fr;}
+    .cat-btns{grid-template-columns:repeat(3,1fr);}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">World<span>Stadium</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="football.html">⚽ כדורגל</a></li>
+      <li><a href="formula1.html">🏎️ פורמולה 1</a></li>
+      <li><a href="tennis.html">🎾 טניס</a></li>
+      <li><a href="world-cup-2026.html">🏆 מונדיאל 2026</a></li>
+      <li><a href="https://ticketingo.co.il/?a_aid=62937177466d8&ref=scream&currency=ILS&keyword=FIFA+World+Cup+2026" target="_blank" rel="noopener" class="btn-nav">חפש כרטיסים</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <div class="hero-badge">🛠️ כלי חישוב חינמי</div>
+    <span class="hero-emoji">🏆</span>
+    <h1>מחשבון עלות נסיעה למונדיאל 2026</h1>
+    <p>חשב בדיוק כמה תעלה לך הנסיעה — כרטיסים, טיסה מישראל ומלון — הכל בשקלים</p>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section class="calc-section">
+  <div class="calc-grid">
+
+    <!-- FORM -->
+    <div class="calc-form">
+      <div class="calc-form-header">
+        <h2>⚙️ פרמטרים לחישוב</h2>
+        <p>עדכן את הנתונים — התוצאה מתעדכנת אוטומטית</p>
+      </div>
+      <div class="calc-body">
+
+        <!-- CITY -->
+        <div class="form-group">
+          <div class="form-label">
+            <span class="step-num">1</span>
+            עיר הגמר / עיר המשחק
+          </div>
+          <select id="citySelect" onchange="calc()">
+            <optgroup label="🇺🇸 ארה&quot;ב">
+              <option value="3800">ניו יורק / ניו ג'רזי (MetLife Stadium)</option>
+              <option value="3800">פילדלפיה (Lincoln Financial Field)</option>
+              <option value="3800">בוסטון (Gillette Stadium)</option>
+              <option value="4200">אטלנטה (Mercedes-Benz Stadium)</option>
+              <option value="4200">מיאמי (Hard Rock Stadium)</option>
+              <option value="4500">דאלאס (AT&amp;T Stadium)</option>
+              <option value="4500">יוסטון (NRG Stadium)</option>
+              <option value="4800">קנזס סיטי (Arrowhead Stadium)</option>
+              <option value="5000">סן פרנסיסקו (Levi's Stadium)</option>
+              <option value="5200">לוס אנג'לס (SoFi Stadium)</option>
+              <option value="5500">סיאטל (Lumen Field)</option>
+            </optgroup>
+            <optgroup label="🇨🇦 קנדה">
+              <option value="4500">טורונטו (BMO Field)</option>
+              <option value="5800">ונקובר (BC Place)</option>
+            </optgroup>
+            <optgroup label="🇲🇽 מקסיקו">
+              <option value="6000">מקסיקו סיטי (Estadio Azteca)</option>
+              <option value="6200">גווידלחרה (Estadio Akron)</option>
+              <option value="6000">מונטריי (Estadio BBVA)</option>
+            </optgroup>
+          </select>
+        </div>
+
+        <!-- STAGE -->
+        <div class="form-group">
+          <div class="form-label">
+            <span class="step-num">2</span>
+            שלב המשחק
+          </div>
+          <div class="seg-btns">
+            <button class="seg-btn active" onclick="setStage('group',this)">בתים<br><small style="font-weight:500;opacity:.8">$100–$290</small></button>
+            <button class="seg-btn" onclick="setStage('r16',this)">שמינית<br><small style="font-weight:500;opacity:.8">$180–$400</small></button>
+            <button class="seg-btn" onclick="setStage('qf',this)">רבע<br><small style="font-weight:500;opacity:.8">$250–$550</small></button>
+            <button class="seg-btn" onclick="setStage('sf',this)">חצי<br><small style="font-weight:500;opacity:.8">$330–$700</small></button>
+            <button class="seg-btn" onclick="setStage('final',this)">גמר<br><small style="font-weight:500;opacity:.8">$500–$1,100</small></button>
+          </div>
+        </div>
+
+        <!-- CATEGORY -->
+        <div class="form-group">
+          <div class="form-label">
+            <span class="step-num">3</span>
+            קטגוריית כרטיס
+          </div>
+          <div class="cat-btns">
+            <button class="cat-btn" onclick="setCat(1,this)">
+              <span class="cat-num">קט׳ 1</span>
+              <span class="cat-price" id="cat1price">$290</span>
+            </button>
+            <button class="cat-btn active" onclick="setCat(2,this)">
+              <span class="cat-num">קט׳ 2</span>
+              <span class="cat-price" id="cat2price">$220</span>
+            </button>
+            <button class="cat-btn" onclick="setCat(3,this)">
+              <span class="cat-num">קט׳ 3</span>
+              <span class="cat-price" id="cat3price">$100</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- MATCHES -->
+        <div class="form-group">
+          <div class="form-label">
+            <span class="step-num">4</span>
+            כמה משחקים?
+          </div>
+          <div class="num-row">
+            <button class="num-btn" onclick="changeVal('matches',-1)">−</button>
+            <span class="num-display" id="matchesDisplay">2</span>
+            <button class="num-btn" onclick="changeVal('matches',1)">+</button>
+            <span style="font-size:0.85rem;color:var(--text2);">משחקים</span>
+          </div>
+        </div>
+
+        <!-- PEOPLE -->
+        <div class="form-group">
+          <div class="form-label">
+            <span class="step-num">5</span>
+            כמה אנשים נוסעים?
+          </div>
+          <div class="num-row">
+            <button class="num-btn" onclick="changeVal('people',-1)">−</button>
+            <span class="num-display" id="peopleDisplay">2</span>
+            <button class="num-btn" onclick="changeVal('people',1)">+</button>
+            <span style="font-size:0.85rem;color:var(--text2);">אנשים</span>
+          </div>
+        </div>
+
+        <!-- HOTEL TYPE -->
+        <div class="form-group">
+          <div class="form-label">
+            <span class="step-num">6</span>
+            סוג מלון (לחדר)
+          </div>
+          <div class="hotel-btns">
+            <button class="hotel-btn" onclick="setHotel(90,this)">
+              <span class="h-icon">🏨</span>
+              <span class="h-name">תקציב</span>
+              <span class="h-price">~$90 / לילה</span>
+            </button>
+            <button class="hotel-btn active" onclick="setHotel(180,this)">
+              <span class="h-icon">🏩</span>
+              <span class="h-name">סטנדרט</span>
+              <span class="h-price">~$180 / לילה</span>
+            </button>
+            <button class="hotel-btn" onclick="setHotel(380,this)">
+              <span class="h-icon">🏰</span>
+              <span class="h-name">פרמיום</span>
+              <span class="h-price">~$380 / לילה</span>
+            </button>
+          </div>
+          <div class="nights-row">
+            <button class="num-btn" style="width:32px;height:32px;font-size:1rem;" onclick="changeVal('nights',-1)">−</button>
+            <span class="num-display" style="font-size:1.1rem;" id="nightsDisplay">5</span>
+            <button class="num-btn" style="width:32px;height:32px;font-size:1rem;" onclick="changeVal('nights',1)">+</button>
+            <span class="nights-label">לילות שהייה</span>
+          </div>
+        </div>
+
+        <!-- EXCHANGE RATE -->
+        <div class="exchange-row">
+          <label>💱 שער דולר (₪):</label>
+          <input type="number" id="rateInput" value="3.75" step="0.05" min="3" max="5" onchange="calc()" style="flex:0;width:80px;">
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RESULTS -->
+    <div class="results-card">
+      <div class="results-header">
+        <h3>📊 אומדן עלות הנסיעה</h3>
+        <p>הערכה — מחירים בשוק משני עלולים להיות גבוהים יותר</p>
+      </div>
+      <div class="results-body">
+
+        <div class="result-line">
+          <span class="rl-label">🎫 כרטיסים</span>
+          <span class="rl-val" id="rTickets">₪0</span>
+        </div>
+        <div class="result-line">
+          <span class="rl-label">✈️ טיסות (הלוך-חזור)
+            <span class="rl-sub" id="flightNote"></span>
+          </span>
+          <span class="rl-val" id="rFlights">₪0</span>
+        </div>
+        <div class="result-line">
+          <span class="rl-label">🏨 מלון
+            <span class="rl-sub" id="hotelNote"></span>
+          </span>
+          <span class="rl-val" id="rHotel">₪0</span>
+        </div>
+        <div class="result-line">
+          <span class="rl-label">🍕 אוכל + תחבורה (est.)</span>
+          <span class="rl-val" id="rExtra">₪0</span>
+        </div>
+
+        <div class="total-box">
+          <div class="total-label">סה"כ לכל הקבוצה</div>
+          <div class="total-amount" id="rTotal">₪0</div>
+          <div class="total-pp" id="rPP">לאדם: ₪0</div>
+        </div>
+
+        <a href="https://ticketingo.co.il/?a_aid=62937177466d8&ref=scream&currency=ILS&keyword=FIFA+World+Cup+2026" target="_blank" rel="noopener" class="btn-primary">
+          🏆 חפש כרטיסים למונדיאל ←
+        </a>
+
+        <p class="disclaimer">
+          * מחירי כרטיסים רשמיים של FIFA. שוק משני עשוי להיות ×2–×4 יקר יותר.<br>
+          * טיסות: הערכה ממוצעת, מחירים משתנים לפי מועד ההזמנה.<br>
+          * מלון: לחדר אחד לכל לילות השהייה.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TIPS -->
+<section class="tips-section">
+  <div class="section-title">
+    <h2>💡 טיפים לחיסכון</h2>
+    <p>איך להוריד את העלות הכוללת</p>
+  </div>
+  <div class="tips-grid">
+    <div class="tip-card">
+      <div class="tip-icon">✈️</div>
+      <h4>הזמן טיסות מוקדם</h4>
+      <p>טיסות למשחקי הגמר יתייקרו ב-200%-400% ככל שמתקרב המועד. הזמן לפחות 4-5 חודשים מראש. כדאי לחפש גם ב-Google Flights ו-Skyscanner.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🏨</div>
+      <h4>מלון מחוץ לעיר</h4>
+      <p>מלונות בעיר המשחק מתייקרים פי 3-5 בסביבות תאריכי המשחק. מלון בפרברים + רכבת/מונית יכול לחסוך ₪500-1,500 לאדם.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🎫</div>
+      <h4>בחר שלב בתים</h4>
+      <p>משחקי שלב הבתים הם זולים בהרבה מהנוק-אאוט. לחוויה מלאה ב-budget — 2-3 משחקי בתים + אחד של שמינית הגמר.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 WorldStadium.co.il | <a href="index.html">ראשי</a> | <a href="world-cup-2026.html">מונדיאל 2026</a> | <a href="blog/index.html">בלוג</a></p>
+  <p style="margin-top:8px;font-size:0.78rem;">אתר זה משתמש בקישורי אפיליאט. הרכישה דרכנו לא מייקרת את המחיר עבורך.</p>
+</footer>
+
+<script>
+// STATE
+const STAGES = {
+  group: [290,220,100],
+  r16:   [400,290,180],
+  qf:    [550,400,250],
+  sf:    [700,550,330],
+  final: [1100,800,500]
+};
+
+let state = {
+  stage: 'group',
+  cat: 2,           // index 0-2
+  matches: 2,
+  people: 2,
+  hotel: 180,       // USD per room per night
+  nights: 5,
+  rate: 3.75
+};
+
+function setStage(s, btn) {
+  state.stage = s;
+  document.querySelectorAll('.seg-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  updateCatPrices();
+  calc();
+}
+
+function setCat(n, btn) {
+  state.cat = n - 1; // 0-indexed
+  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  calc();
+}
+
+function setHotel(p, btn) {
+  state.hotel = p;
+  document.querySelectorAll('.hotel-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  calc();
+}
+
+function changeVal(key, delta) {
+  const limits = { matches:[1,5], people:[1,10], nights:[1,21] };
+  state[key] = Math.max(limits[key][0], Math.min(limits[key][1], state[key] + delta));
+  document.getElementById(key + 'Display').textContent = state[key];
+  calc();
+}
+
+function updateCatPrices() {
+  const prices = STAGES[state.stage];
+  document.getElementById('cat1price').textContent = '$' + prices[0].toLocaleString();
+  document.getElementById('cat2price').textContent = '$' + prices[1].toLocaleString();
+  document.getElementById('cat3price').textContent = '$' + prices[2].toLocaleString();
+}
+
+function fmt(n) {
+  return '₪' + Math.round(n).toLocaleString('he-IL');
+}
+
+function calc() {
+  const rate = parseFloat(document.getElementById('rateInput').value) || 3.75;
+  state.rate = rate;
+
+  const flightUSD = parseInt(document.getElementById('citySelect').value);
+  const ticketUSD = STAGES[state.stage][state.cat];
+
+  // Calculations
+  const tickets = ticketUSD * state.matches * state.people * rate;
+  const flights = flightUSD * state.people;
+  const hotel   = state.hotel * state.nights * rate;
+  const extra   = 60 * state.nights * state.people * rate; // $60/day/person food+transport
+
+  const total = tickets + flights + hotel + extra;
+  const pp = total / state.people;
+
+  // Update UI
+  document.getElementById('rTickets').textContent = fmt(tickets);
+  document.getElementById('rFlights').textContent = fmt(flights);
+  document.getElementById('rHotel').textContent = fmt(hotel);
+  document.getElementById('rExtra').textContent = fmt(extra);
+  document.getElementById('rTotal').textContent = fmt(total);
+  document.getElementById('rPP').textContent = 'לאדם: ' + fmt(pp);
+
+  document.getElementById('flightNote').textContent = state.people + ' × ₪' + flightUSD.toLocaleString();
+  document.getElementById('hotelNote').textContent = state.nights + ' לילות × ₪' + Math.round(state.hotel * rate).toLocaleString();
+}
+
+// INIT
+updateCatPrices();
+calc();
+</script>
+</body>
+</html>
