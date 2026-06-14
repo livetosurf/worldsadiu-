@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
 <meta charset="UTF-8">
@@ -97,6 +97,21 @@
   footer{background:#0C1B2E;color:rgba(255,255,255,.55);text-align:center;padding:32px 24px;font-size:0.85rem;}
   footer a{color:rgba(255,255,255,.8);margin:0 8px;}
   @media(max-width:800px){.hero-inner,.two-col{grid-template-columns:1fr;}.hero-stats{display:none;}.nearby-grid{grid-template-columns:1fr;}}
+
+    .footer-legal {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-legal a {
+      color: rgba(255,255,255,0.55);
+      font-size: 0.88rem;
+      transition: color 0.2s;
+    }
+    .footer-legal a:hover { color: var(--accent); }
 </style>
 </head>
 <body>
@@ -245,7 +260,69 @@
 </section>
 
 <section class="section"><div class="section-inner"><div class="cta-box"><h2>מוכן לצפות במונדיאל בBay Area? 🌉</h2><p>חפש כרטיסים לGroup Stage ולRound of 32 — עם ערבות כניסה מלאה.</p><a href="https://ticketingo.co.il/?a_aid=62937177466d8&ref=scream&currency=ILS&keyword=FIFA+World+Cup+2026+San+Francisco" target="_blank" rel="noopener" class="btn-primary" style="font-size:1.05rem;padding:16px 40px;display:inline-flex;">🎫 חפש כרטיסים למונדיאל סן פרנסיסקו ←</a></div></div></section>
-<footer><p>© 2026 WorldStadium.co.il | <a href="../index.html">ראשי</a> | <a href="index.html">ערים למונדיאל</a> | <a href="../world-cup-2026.html">מונדיאל 2026</a></p><p style="margin-top:8px;font-size:0.75rem;">האתר משתמש בקישורי שותפים. רכישת כרטיסים דרך הקישורים מספקת עמלה לאתר ללא עלות נוספת עבורך.</p></footer>
+<footer><p>© 2026 WorldStadium.co.il | <a href="../index.html">ראשי</a> | <a href="index.html">ערים למונדיאל</a> | <a href="../world-cup-2026.html">מונדיאל 2026</a></p><p style="margin-top:8px;font-size:0.75rem;">האתר משתמש בקישורי שותפים. רכישת כרטיסים דרך הקישורים מספקת עמלה לאתר ללא עלות נוספת עבורך.</p>    <div class="footer-legal">
+      <a href="../terms.html">תנאי שימוש</a>
+      <a href="../privacy.html">מדיניות פרטיות</a>
+      <a href="../accessibility.html">הצהרת נגישות</a>
+    </div>
+</footer>
 <script>document.querySelectorAll('.faq-q').forEach(b=>b.addEventListener('click',()=>{const i=b.parentElement,o=i.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(e=>e.classList.remove('open'));if(!o)i.classList.add('open');}));</script>
+
+<!-- Accessibility Widget -->
+<style>
+  .a11y-btn {
+    position: fixed; bottom: 20px; left: 20px; z-index: 9999;
+    width: 50px; height: 50px; border-radius: 50%;
+    background: var(--primary, #0C1B2E); color: #fff;
+    border: 2px solid var(--accent, #F5C518); font-size: 1.5rem;
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3); transition: transform 0.2s;
+  }
+  .a11y-btn:hover { transform: scale(1.1); }
+  .a11y-panel {
+    position: fixed; bottom: 80px; left: 20px; z-index: 9999;
+    background: #fff; border-radius: 16px; padding: 20px;
+    box-shadow: 0 8px 40px rgba(12,27,46,0.14);
+    display: none; width: 240px; direction: rtl;
+  }
+  .a11y-panel.open { display: block; }
+  .a11y-panel h3 { font-size: 1rem; font-weight: 800; margin-bottom: 14px; }
+  .a11y-panel button {
+    display: block; width: 100%; padding: 10px 14px; margin-bottom: 8px;
+    border: 1px solid rgba(12,27,46,0.1); border-radius: 8px;
+    background: #F4F7FC; font-family: inherit; font-size: 0.9rem;
+    font-weight: 500; cursor: pointer; text-align: right; transition: background 0.2s;
+  }
+  .a11y-panel button:hover { background: #E8EEF6; }
+  .a11y-panel button.active { background: #F5C518; font-weight: 700; }
+  body.high-contrast { filter: contrast(1.4); }
+  body.highlight-links a { outline: 2px solid #F5C518 !important; text-decoration: underline !important; }
+  body.readable-font, body.readable-font * { font-family: Arial, sans-serif !important; }
+</style>
+<button class="a11y-btn" aria-label="תפריט נגישות" onclick="document.querySelector('.a11y-panel').classList.toggle('open')">♿</button>
+<div class="a11y-panel" role="region" aria-label="אפשרויות נגישות">
+  <h3>נגישות</h3>
+  <button onclick="a11yFontSize(1)">הגדלת טקסט +</button>
+  <button onclick="a11yFontSize(-1)">הקטנת טקסט −</button>
+  <button onclick="a11yToggle('high-contrast')">ניגודיות גבוהה</button>
+  <button onclick="a11yToggle('highlight-links')">הדגשת קישורים</button>
+  <button onclick="a11yToggle('readable-font')">גופן קריא</button>
+  <button onclick="a11yReset()">איפוס</button>
+</div>
+<script>
+  function a11yFontSize(d) {
+    var s = parseFloat(getComputedStyle(document.documentElement).fontSize);
+    document.documentElement.style.fontSize = Math.min(24, Math.max(12, s + d * 2)) + 'px';
+  }
+  function a11yToggle(cls) {
+    document.body.classList.toggle(cls);
+    event.target.classList.toggle('active');
+  }
+  function a11yReset() {
+    document.documentElement.style.fontSize = '';
+    document.body.classList.remove('high-contrast','highlight-links','readable-font');
+    document.querySelectorAll('.a11y-panel button.active').forEach(function(b){b.classList.remove('active');});
+  }
+</script>
 </body>
 </html>
